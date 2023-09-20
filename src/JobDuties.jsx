@@ -1,5 +1,18 @@
+import { FaAngleDoubleRight } from "react-icons/fa";
+import { v4 as uuidv4 } from "uuid";
 const JobDuties = ({ duties }) => {
-  console.log(duties);
-  return <div>JobDuties</div>;
+  return (
+    <div>
+      {duties.map((duty) => {
+        const id = uuidv4();
+        return (
+          <div key={id} className="job-desc">
+            <FaAngleDoubleRight className="job-icon" />
+            {duty}
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 export default JobDuties;
